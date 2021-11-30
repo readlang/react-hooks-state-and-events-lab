@@ -4,15 +4,16 @@ import Item from "./Item";
 function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState("All")
   console.log(selectedCategory)
+  let filteredItems = []
 
   function handleFilter(event) {
     setSelectedCategory(event.target.value)
   }
 
   if (selectedCategory === "All") {
-    const filteredItems = items
+    filteredItems = items
   } else {
-    const filteredItems = items.filter( item =>( item.category === selectedCategory ))
+    filteredItems = items.filter( item =>( item.category === selectedCategory ))
   }
   
 
